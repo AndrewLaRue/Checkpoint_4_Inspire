@@ -36,9 +36,9 @@ Stretch Goals
 
 [--]   Allow the user to toggle the clock from, 12hr to 24hr
 
-[--]   Include an Icon to show what the weather is sunny/cloudy/rainy hint look at the weather data
+[-X-]   Include an Icon to show what the weather is sunny/cloudy/rainy hint look at the weather data
 
-[-X-]   Add a button to cycle to next quote/picture
+[-X/X-]   Add a button to cycle to next quote/picture
 
 [--]   Add a settings so user can change to a new 'theme' (font, background colors, etc.)
 

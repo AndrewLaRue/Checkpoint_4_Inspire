@@ -32,6 +32,10 @@ body {
 
 }
 
+.weather-icon {
+  height: 3em !important;
+}
+
 .hand {
   font-family: 'Just Another Hand', cursive;
 }
@@ -48,6 +52,10 @@ body {
   transform: translateY(-50px);
 }
 
+a {
+  text-decoration: none;
+}
+
 .todo-offcanvas {
   background-image: url(/assets/img/new\ note.png);
   background-position: center;
@@ -60,9 +68,20 @@ body {
   filter: brightness(75%);
 }
 
+.codeworks {
+  height: 1em;
+}
+
+.links-offcanvas {
+  width: 15vw;
+  margin-top: 10vh;
+  height: 72vh;
+}
+
 .todo-icon {
   height: 3em;
-  filter: brightness(75%);
+  filter: brightness(50%);
+  opacity: .75;
 }
 
 .todo-list {

@@ -25,11 +25,16 @@
 
   <header class="container-fluid fixed-top">
     <div class="row">
-
-      <div class="col-10 offset-1 text-center img-text">
-        <h2>Good Morning Andrew</h2>
+      <div class="col-2">
+        <button class="border-0 img-text clear" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasLinks" aria-controls="offcanvasLinks">
+          <i class="mdi mdi-link fs-1" title="Links"></i>
+        </button>
       </div>
-      <div id="weather" class="col-1 img-text text-center mt-1 fs-4">
+      <div class="col-8 text-center img-text">
+        <h1 class="mt-2">Good Morning Andrew</h1>
+      </div>
+      <div id="weather" class="col-2 img-text text-center mt-1 fs-4">
 
       </div>
     </div>
@@ -96,12 +101,59 @@
         <span class=" ms-2 border-bottom border-1 border-dark">This is a todo</span>
         <i class="mdi mdi-delete-forever text-danger selectable me-4" title="Delete Todo"></i>
       </li> -->
-
     </ul>
-
-
   </div>
 
+
+  <div class="offcanvas offcanvas-start links-offcanvas img-text border-0 clear" tabindex="-1" id="offcanvasLinks"
+    aria-labelledby="offcanvasLinksLabel">
+    <ul class="list-unstyled">
+
+      <a href="https://classroom.codeworksacademy.com/?code=kvadIKQJrc38sWRj&state=VG9hTHQ1SjNvQ1hldVpucFVRdEY0ck9STjVnNXJrUkJUUmFpTFpuQjdZUQ%3D%3D#/auth/cohorts/61538adfe1e93a00168aa490/outlines/1"
+        class=" ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <img class="codeworks" src="https://bcw.blob.core.windows.net/public/img/9977764104160066" alt="">
+        <span class="fs-6 ms-2 pt-2"> CodeWorks</span>
+      </a>
+      <a href="https://github.com/"
+        class="mdi mdi-github ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/"
+        class="mdi mdi-linkedin ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> LinkedIn</span>
+      </a>
+      <a href="https://mail.google.com/"
+        class="mdi mdi-gmail ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> Gmail</span>
+      </a>
+      <a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/"
+        class="mdi mdi-bootstrap ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> Bootstrap Docs</span>
+      </a>
+      <a href="https://pictogrammers.github.io/@mdi/font/6.5.95/"
+        class="mdi mdi-vector-square ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> MDI Icons</span>
+      </a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        class="mdi mdi-language-javascript ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> JS Docs</span>
+      </a>
+      <a href="https://nodejs.org/en/docs/"
+        class="mdi mdi-nodejs ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> NodeJs Docs</span>
+      </a>
+      <a href="https://vuejs.org/guide/introduction.html"
+        class="mdi mdi-vuejs ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> VueJs Docs</span>
+      </a>
+      <a href="https://fonts.google.com/"
+        class="mdi mdi-google-downasaur ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        <span class="fs-6 ms-2"> Google Fonts</span>
+      </a>
+
+
+    </ul>
+  </div>
 
   <!-- Scripts -->
   <section>
