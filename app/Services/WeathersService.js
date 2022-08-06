@@ -11,7 +11,7 @@ class WeathersService {
     console.log('[get weather service]', res);
 
     ProxyState.weather = new Weather(res.data)
-    console.log(ProxyState.weather);
+    // console.log(ProxyState.weather);
   }
 
 

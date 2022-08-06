@@ -6,12 +6,15 @@ import { Weather } from "../Models/Weather.js"
 
 function _draw() {
   let reading = ProxyState.weather.toggle
-  if (reading) {
+  if (reading == 1) {
     // @ts-ignore
     document.getElementById('weather').innerHTML = ProxyState.weather.FahrTemplate
-  } else {
+  } else if (reading == 2){
     // @ts-ignore
     document.getElementById('weather').innerHTML = ProxyState.weather.CelsiusTemplate
+  } else if(reading == 3){
+    // @ts-ignore
+    document.getElementById('weather').innerHTML = ProxyState.weather.KelvinTemplate
   }
 }
 
@@ -23,7 +26,6 @@ export class WeathersController {
     setInterval(this.getWeather, 100000)
   }
 
-
   async getWeather() {
     try {
       await weathersService.getWeather()
@@ -34,12 +36,20 @@ export class WeathersController {
   }
 
   toggleFahr() {
-    ProxyState.weather.toggle = false
+    ProxyState.weather.toggle -= 2
+    ProxyState.weather = ProxyState.weather
     _draw()
   }
 
   toggleCel() {
-    ProxyState.weather.toggle = true
+    ProxyState.weather.toggle++
+        ProxyState.weather = ProxyState.weather
+    _draw()
+  }
+
+  toggleKel() {
+    ProxyState.weather.toggle++
+        ProxyState.weather = ProxyState.weather
     _draw()
   }
 

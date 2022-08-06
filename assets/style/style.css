@@ -13,6 +13,11 @@
   text-shadow: 2px 3px 5px black;
 }
 
+.img-text-dark {
+  color: rgb(black);
+  text-shadow: 2px 3px 5px rgb(210, 208, 208);
+}
+
 body {
   background-position: center;
   background-size: cover;
@@ -81,7 +86,7 @@ a {
 .todo-icon {
   height: 3em;
   filter: brightness(50%);
-  opacity: .75;
+  opacity: .85;
 }
 
 .todo-list {

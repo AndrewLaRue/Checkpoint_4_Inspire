@@ -32,7 +32,7 @@ Stretch Goals
 
 [--]   Allow the user to set their name and have it save to localStorage
 
-[--]   Change the message from Good Morning to Good Afternoon, Evening as appropriate
+[-X-]   Change the message from Good Morning to Good Afternoon, Evening as appropriate
 
 [--]   Allow the user to toggle the clock from, 12hr to 24hr
 
@@ -42,11 +42,11 @@ Stretch Goals
 
 [--]   Add a settings so user can change to a new 'theme' (font, background colors, etc.)
 
-[--]   Clicking the weather should let the user toggle between Celsius, Fahrenheit, and Kelvin
+[-X-]   Clicking the weather should let the user toggle between Celsius, Fahrenheit, and Kelvin
 
-[--]   If you think through some of the actions being performed you might find a way to optimize the list by only updating the one todo that changes at a time
+[-X-]   If you think through some of the actions being performed you might find a way to optimize the list by only updating the one todo that changes at a time
 
-[--]   Every time you update a todo you shouldn't have to re-get the entire list you already know what changed about the one todo
+[-X-]   Every time you update a todo you shouldn't have to re-get the entire list you already know what changed about the one todo
 
 
 

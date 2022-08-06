@@ -1,22 +1,15 @@
 
-
-
-
-
-
-
 export class TimesController{
   constructor() {
-    setInterval(this.clock, 1000)
+    setInterval(this.clock, 6000)
     this.clock()
+
    }
-  
 
 clock() {
 
   let time = new Date()
-  let mod = new Date()
-  let day = mod.toLocaleDateString('en-us', { timeZone: 'Europe/Helsinki' })
+  let day = time.toLocaleDateString('en-us', { timeZone: 'Europe/Helsinki' })
   let h = time.getHours()
   let m = time.getMinutes()
   if (h > 12) {
@@ -36,7 +29,19 @@ clock() {
   document.getElementById('date').innerHTML = `
   <p>${day}</p>
   `
+  let hours = time.getHours()
+    if (hours < 12) {
+    // @ts-ignore
+    document.getElementById('greeting-time').innerText = `Good Morning`
+  } else if (hours < 18) {
+    // @ts-ignore
+    document.getElementById('greeting-time').innerText = `Good Afternoon`
+  } else {
+    // @ts-ignore
+    document.getElementById('greeting-time').innerText = `Good Evening`
+  }
 
-}
+  }
+  
 
 }
