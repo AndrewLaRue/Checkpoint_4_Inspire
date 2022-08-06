@@ -22,7 +22,7 @@ export class Weather {
 
     return `
     <div class="no-select selectable" onclick="app.weathersController.toggleFahr()">
-      <p>${fahr}° F</p>
+      <p class="mb-0">${fahr}° F</p>
       <p>${this.name}</p>
     </div>
     `
@@ -34,7 +34,7 @@ export class Weather {
 
     return `
     <div class="no-select selectable" onclick="app.weathersController.toggleCel()">
-    <p>${celsius}° C</p>
+    <p class="mb-0">${celsius}° C</p>
     <p>${this.name}</p>
     </div>
     `

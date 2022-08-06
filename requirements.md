@@ -1,7 +1,4 @@
 
-
-
-
 [-X-]   Quote: Quote always displayed and Author reveals on hover
 
 [-X-]   Image: The API must be used to get a random image on reload.
@@ -29,9 +26,6 @@
 [-X-]   Deleting a todo requires confirmation
 
 [-X-]   All data for Weather, Quotes, Todos, and Images are retrieved through the BCW Sandbox API
-
-
-
 
 
 Stretch Goals
