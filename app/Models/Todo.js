@@ -1,6 +1,3 @@
-// import { ProxyState } from "../AppState.js"
-
-
 
 
 export class Todo {
@@ -21,5 +18,7 @@ export class Todo {
       </li>
     `
   }
+
+  
 
 }

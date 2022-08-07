@@ -8,6 +8,7 @@ function _draw() {
   let values = ProxyState.values;
   let cardsTemplate = ''
   values.forEach(v => cardsTemplate += v.CardTemplate)
+  // @ts-ignore
   document.getElementById("app").innerHTML = /*html*/`
   <div class="my-3">
     <button class="btn btn-secondary text-white elevation-2" onclick="app.valuesController.addValue()">Add Value</button>  

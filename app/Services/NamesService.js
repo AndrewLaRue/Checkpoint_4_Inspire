@@ -15,6 +15,8 @@ class NamesService {
     console.log(ProxyState.name.text);
     ProxyState.name = ProxyState.name
 
+    // @ts-ignore
+    document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
 
   }
 

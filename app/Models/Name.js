@@ -21,7 +21,7 @@ export class Name{
   
     get TextTemplate(){
       return /*html*/ `
-      <i class="mdi mdi-lightbulb fs-5 text-warning" onclick="app.namesController.toggleText(${this.text})" title="Change Text">
+      <i class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} mdi mdi-alpha-t-circle fs-5" onclick="app.namesController.toggleText(${this.text})" title="Change Text">
       </i>
       `
     }

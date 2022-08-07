@@ -4,14 +4,19 @@ import { namesService } from "../Services/NamesService.js";
 import { loadState, saveState } from "../Utils/LocalStorage.js";
 import { Pop } from "../Utils/Pop.js";
 
+
+// TODO combine top 3?
+function _drawOption() {
+  if (!ProxyState.name) {
+    _drawForm()
+  } else {
+    _drawName()
+  }
+}
+
 function _drawForm() {
   // @ts-ignore
   document.getElementById('greeting-name').innerHTML = getNameForm() 
-}
-
-function _drawTextToggle() {
-  // @ts-ignore
-  document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
 }
 
 function _drawName() {
@@ -20,21 +25,19 @@ function _drawName() {
   document.getElementById('greeting-name').innerHTML = name
 }
 
-function _draw() {
-  if (!ProxyState.name) {
-    _drawForm()
-  } else {
-    _drawName()
-  }
+function _drawTextToggle() {
+  // @ts-ignore
+  document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
 }
+
 
 export class NamesController{
   constructor() {
-  ProxyState.on('name', _draw)
+  ProxyState.on('name', _drawOption)
   ProxyState.on('name', saveState)
     
   loadState()
-  _draw()
+  _drawOption()
   _drawTextToggle()
   }
   

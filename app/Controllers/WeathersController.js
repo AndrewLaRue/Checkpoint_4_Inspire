@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { weathersService } from "../Services/WeathersService.js";
 import { Pop } from "../Utils/Pop.js";
-// import { Weather } from "../Models/Weather.js"
+
 
 
 function _draw() {

@@ -90,8 +90,8 @@ a {
 .todo-offcanvas {
   background-image: url(/assets/img/new\ note.png);
   background-position: center;
-  background-size: cover;
-  height: 68vh;
+  background-size: inherit;
+  height: 65vh;
   width: 23vw;
   margin-top: 15vh;
   margin-right: 1vw;

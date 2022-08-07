@@ -10,6 +10,7 @@ function _draw() {
 
 
 class QuotesService {
+
   constructor() {
     ProxyState.on('quote', _draw)
     _draw()

@@ -43,7 +43,7 @@ export class TodosController {
     this.getTodos()
   }
 
-  // GET \\
+// GET \\
   async getTodos() {
     try {
       await todosService.getTodos()
@@ -74,7 +74,7 @@ export class TodosController {
     }
   }
 
-    // PUT \\
+// PUT \\
   async toggle(id) {
     try {
       await todosService.toggle(id)
