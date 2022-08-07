@@ -94,7 +94,7 @@ a {
   height: 68vh;
   width: 23vw;
   margin-top: 15vh;
-  margin-right: 2vw;
+  margin-right: 1vw;
   border: 2px 2px 2px solid black !important;
   filter: brightness(75%);
 }

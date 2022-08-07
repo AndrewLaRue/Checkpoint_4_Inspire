@@ -24,7 +24,7 @@ export class Weather {
         <img class="weather-icon" title="${this.iconInfo}" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
       <div>
-        <div class="">${fahr}° F</div>
+        <div>${fahr}° F</div>
         <div>${this.name}</div>
       </div>
     </section>
@@ -37,13 +37,13 @@ export class Weather {
     let celsius = Math.floor(kelvin - 273)
 
     return /*html*/ `
-    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row" onclick="app.weathersController.toggleKel()" title="Toggle Kelvin">
+    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row align-items-center" onclick="app.weathersController.toggleKel()" title="Toggle Kelvin">
       <div>
         <img class="weather-icon" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
       <div>
-        <p class="mb-0">${celsius}° C</p>
-        <p>${this.name}</p>
+        <div>${celsius}° C</div>
+        <div>${this.name}</div>
       </div>
     </section>
     `
@@ -53,13 +53,13 @@ export class Weather {
     let kelvin = Math.floor(this.temp)
     
     return /*html*/ `
-    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row" onclick="app.weathersController.toggleFahr()"  title="Toggle Fahrenheit">
+    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row align-items-center" onclick="app.weathersController.toggleFahr()"  title="Toggle Fahrenheit">
       <div>
         <img class="weather-icon" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
       <div>
-        <p class="mb-0">${kelvin}° K</p>
-        <p>${this.name}</p>
+        <div>${kelvin}° K</div>
+        <div>${this.name}</div>
       </div>
     </section>
     `
