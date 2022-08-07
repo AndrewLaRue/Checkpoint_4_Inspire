@@ -1,8 +1,4 @@
-
-
-
-
-
+import { ProxyState } from "../AppState.js"
 
 
 export class Weather {
@@ -22,25 +18,26 @@ export class Weather {
     let celsius = Math.floor(kelvin - 273)
     let fahr = Math.floor(celsius * (9/5) + 32)
 
-    return `
-    <div class="no-select selectable d-flex flex-row" onclick="app.weathersController.toggleCel()">
+    return /*html*/ `
+    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row align-items-center" onclick="app.weathersController.toggleCel()" title="Toggle Celsius">
       <div>
         <img class="weather-icon" title="${this.iconInfo}" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
       <div>
-        <p class="mb-0">${fahr}° F</p>
-        <p>${this.name}</p>
+        <div class="">${fahr}° F</div>
+        <div>${this.name}</div>
       </div>
-    </div>
+    </section>
     `
   }
+
   get CelsiusTemplate() {
     
     let kelvin = this.temp
     let celsius = Math.floor(kelvin - 273)
 
-    return `
-    <div class="no-select selectable d-flex flex-row" onclick="app.weathersController.toggleKel()">
+    return /*html*/ `
+    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row" onclick="app.weathersController.toggleKel()" title="Toggle Kelvin">
       <div>
         <img class="weather-icon" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
@@ -48,15 +45,15 @@ export class Weather {
         <p class="mb-0">${celsius}° C</p>
         <p>${this.name}</p>
       </div>
-    </div>
+    </section>
     `
   }
 
   get KelvinTemplate() {
     let kelvin = Math.floor(this.temp)
     
-    return `
-    <div class="no-select selectable d-flex flex-row" onclick="app.weathersController.toggleFahr()">
+    return /*html*/ `
+    <section class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'} no-select selectable d-flex flex-row" onclick="app.weathersController.toggleFahr()"  title="Toggle Fahrenheit">
       <div>
         <img class="weather-icon" src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
       </div>
@@ -64,7 +61,8 @@ export class Weather {
         <p class="mb-0">${kelvin}° K</p>
         <p>${this.name}</p>
       </div>
-    </div>
+    </section>
     `
   }
+
 }

@@ -4,10 +4,6 @@ import { Image } from "../Models/Image.js"
 
 class ImagesService{
 
-
-
-
-
   async getImage() {
     let res = await sandboxApi.get('/images')
     // console.log('[get img res]', res);

@@ -1,4 +1,31 @@
 /* BASIC STYLES HERE */
+
+
+/* Font */
+
+.img-text {
+  color: #d2d0d0;
+  text-shadow: 1px 1px 2px black;
+}
+
+.img-text-dark {
+  color: rgb(black);
+  text-shadow: 1px 1px 2px rgb(210, 208, 208);
+}
+
+* {
+  font-family: 'Black Ops One', cursive;
+}
+
+.hand {
+  font-family: 'Just Another Hand', cursive;
+}
+
+.scale-up:hover {
+  transform: scale(1.2) !important;
+}
+
+/* Clock */
 .center-stage {
   position: absolute;
   display: flex;
@@ -8,57 +35,56 @@
   height: 100vh;
 }
 
-.img-text {
-  color: rgb(210, 208, 208);
-  text-shadow: 2px 3px 5px black;
-}
-
-.img-text-dark {
-  color: rgb(black);
-  text-shadow: 2px 3px 5px rgb(210, 208, 208);
-}
-
 body {
   background-position: center;
   background-size: cover;
 }
 
+
+/* Background */
 .clear {
   background-color: transparent;
 }
 
-* {
-  font-family: 'Black Ops One', cursive;
+/* Date */
+#date {
+  transform: translateY(-50px);
 }
 
-.input-todo {
-  margin-top: 2.2em !important;
 
-
-}
-
-.weather-icon {
-  height: 3em !important;
-}
-
-.hand {
-  font-family: 'Just Another Hand', cursive;
+/* Links */
+a {
+  text-decoration: none;
 }
 
 .hide-scroll::-webkit-scrollbar {
   display: none;
 }
 
+.codeworks {
+  height: 1em;
+}
+
 #todo-list {
   overflow-y: scroll;
 }
 
-#date {
-  transform: translateY(-50px);
+.links-offcanvas {
+  width: 15vw;
+  margin-top: 10vh;
+  height: 72vh;
 }
 
-a {
-  text-decoration: none;
+
+/* Todo */
+.input-todo {
+  margin-top: 2.2em !important;
+}
+
+.todo-list {
+  width: 400px;
+  position: absolute;
+  bottom: 0;
 }
 
 .todo-offcanvas {
@@ -72,34 +98,3 @@ a {
   border: 2px 2px 2px solid black !important;
   filter: brightness(75%);
 }
-
-.codeworks {
-  height: 1em;
-}
-
-.links-offcanvas {
-  width: 15vw;
-  margin-top: 10vh;
-  height: 72vh;
-}
-
-.todo-icon {
-  height: 3em;
-  filter: brightness(50%);
-  opacity: .85;
-}
-
-.todo-list {
-  width: 400px;
-  position: absolute;
-  bottom: 0;
-}
-
-/* .background-img {
-  background-image: url('https: //cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg');
-  background-size: cover;
-  background-position: absolute !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-} */

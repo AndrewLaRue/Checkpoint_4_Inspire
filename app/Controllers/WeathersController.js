@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { weathersService } from "../Services/WeathersService.js";
 import { Pop } from "../Utils/Pop.js";
-import { Weather } from "../Models/Weather.js"
+// import { Weather } from "../Models/Weather.js"
 
 
 function _draw() {
@@ -20,9 +20,11 @@ function _draw() {
 
 
 export class WeathersController {
+
   constructor() {
     this.getWeather()
     ProxyState.on('weather', _draw)
+    ProxyState.on('name', _draw)
     setInterval(this.getWeather, 100000)
   }
 
@@ -30,10 +32,14 @@ export class WeathersController {
     try {
       await weathersService.getWeather()
     } catch (error) {
-      console.error('[get weather function], error');
+      // console.error('[get weather function], error');
       Pop.error(error)
     }
   }
+
+
+  // TOGGLES \\
+  // TODO combine them
 
   toggleFahr() {
     ProxyState.weather.toggle -= 2
@@ -54,3 +60,5 @@ export class WeathersController {
   }
 
 }
+
+

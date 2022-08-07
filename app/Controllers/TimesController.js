@@ -1,9 +1,11 @@
+import { ProxyState } from "../AppState.js";
 
 export class TimesController{
   constructor() {
+    ProxyState.on('name', this.clock)
     setInterval(this.clock, 6000)
-    this.clock()
 
+    this.clock()
    }
 
 clock() {
@@ -24,10 +26,10 @@ clock() {
   }
 
   // @ts-ignore
-  document.getElementById('clock').innerHTML = h + ":" + m
+  document.getElementById('clock').innerHTML = `<span class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'}">${h + ":" + m}</span>`
   // @ts-ignore
   document.getElementById('date').innerHTML = `
-  <p>${day}</p>
+  <p class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'}">${day}</p>
   `
   let hours = time.getHours()
     if (hours < 12) {

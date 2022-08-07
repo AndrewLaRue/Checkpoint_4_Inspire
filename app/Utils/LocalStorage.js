@@ -20,7 +20,8 @@ export function loadState(){
   let rawData = localStorage.getItem('Name')
   if(rawData){
     let data = JSON.parse(rawData)
-    ProxyState.name = data.name = new Name()
+    // ProxyState.name = data.name = new Name()
+ProxyState.name = new Name(data.name)
   }
   
 

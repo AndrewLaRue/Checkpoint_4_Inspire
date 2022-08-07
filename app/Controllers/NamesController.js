@@ -1,41 +1,75 @@
 import { ProxyState } from "../AppState.js";
+import { getNameForm } from "../Components/NameForm.js";
 import { namesService } from "../Services/NamesService.js";
 import { loadState, saveState } from "../Utils/LocalStorage.js";
+import { Pop } from "../Utils/Pop.js";
+
+function _drawForm() {
+  // @ts-ignore
+  document.getElementById('greeting-name').innerHTML = getNameForm() 
+}
+
+function _drawTextToggle() {
+  // @ts-ignore
+  document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
+}
+
+function _drawName() {
+  let name = ProxyState.name.NameTemplate
+  // @ts-ignore
+  document.getElementById('greeting-name').innerHTML = name
+}
 
 function _draw() {
-  let names = ProxyState.name
-  if (!names) {
-    return
+  if (!ProxyState.name) {
+    _drawForm()
+  } else {
+    _drawName()
   }
-  // @ts-ignore
-  document.getElementById('greeting-name').textContent = ProxyState.name.toString()
 }
 
 export class NamesController{
   constructor() {
   ProxyState.on('name', _draw)
-  // ProxyState.on('name', saveState)
+  ProxyState.on('name', saveState)
     
-  // loadState()
+  loadState()
   _draw()
+  _drawTextToggle()
   }
   
   addName() {
-    // @ts-ignore
-    window.event.preventDefault()
-    // @ts-ignore
-    let form = window.event.target
-
-    let newName = {
+    try {
       // @ts-ignore
-      name: form.name.value
-    }
-    namesService.addName(newName)
-    // @ts-ignore
-    form.reset
-  }
+      window.event.preventDefault()
+      // @ts-ignore
+      let form = window.event.target
   
-  test() {
-    console.log(ProxyState.name);
+      let newName = {
+        // @ts-ignore
+        name: form.name.value
+      }
+      
+      namesService.addName(newName)
+      // @ts-ignore
+      form.reset
+    } catch (error) {
+      console.error('[addName]', error);
+      Pop.error(error)
+    }
   }
+
+  changeName() {
+    _drawForm()
+  }
+
+  toggleText() {
+      try {
+        namesService.toggleText()
+      } catch (error) {
+        console.error('[changeText]', error);
+        Pop.error(error)
+      }
+  }
+
 }

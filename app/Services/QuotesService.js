@@ -4,8 +4,6 @@ import { Quote } from "../Models/Quote.js"
 
 
 function _draw() {
-
-
   // @ts-ignore
   document.getElementById('quote').innerHTML = ProxyState.quote.Template
 }
@@ -24,6 +22,7 @@ class QuotesService {
     ProxyState.quote = new Quote(res.data)
     // console.log(ProxyState.quote);
   }
+
 }
 
 

@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { quotesService } from "../Services/QuotesService.js";
 import { Pop } from "../Utils/Pop.js";
-import { Quote } from "../Models/Quote.js"
+
 
 function _draw() {
   // @ts-ignore
@@ -12,6 +12,7 @@ export class QuotesController {
 
   constructor() {
     ProxyState.on('quote', _draw)
+    ProxyState.on('name', _draw)
     this.getQuote()
     _draw()
   }
@@ -24,6 +25,7 @@ export class QuotesController {
       Pop.error(error)
     }
   }
+
   async change() {
   await this.getQuote()
 }

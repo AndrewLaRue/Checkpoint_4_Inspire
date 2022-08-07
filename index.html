@@ -18,153 +18,149 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>Checkpoint_4_Inspire</title>
+
 </head>
 
 <body>
 
-
+  <!-- Links  |  Greeting  |  Weather -->
   <header class="container-fluid fixed-top">
-    <div class="row">
+    <section class="row">
+
+      <!-- Links -->
       <div class="col-2">
-        <button class="border-0 img-text-dark clear" type="button" data-bs-toggle="offcanvas"
+        <button class="border-0 clear scale-up" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasLinks" aria-controls="offcanvasLinks"><b>
-            <i class="mdi mdi-link fs-1" title="Links"></i></b>
+            <i class="mdi mdi-link fs-1 img-text selectable" title="Links"></i></b>
         </button>
       </div>
-      <div class="col-8 text-center img-text">
-        <h2 class="mt-2 no-select">
-          <span id="greeting-time">
 
-          </span>
-          <form onsubmit="app.namesController.addName()">
-            <div id="greeting-name">
-              <!-- <input class="clear border-0 text-center" type="text" placeholder="Add Name" name="name" id="name"
-                value="name">
-              <button>add</button> -->
-            </div>
-          </form>
-        </h2>
+      <!-- Greeting -->
+      <div class="col-8 text-center ">
+        <div class="mt-2 no-select">
+          <!-- <h2 id="greeting-time"></h2> -->
+          <h2 id="greeting-name"></h2>
+        </div>
       </div>
-      <div id="weather" class="col-2 img-text text-center mt-1 fs-4">
-      </div>
-    </div>
 
+      <!-- Weather -->
+      <div id="weather" class="col-2  mt-1 fs-4 selectable"></div>
+    </section>
   </header>
 
-
+  <!-- Clock -->
   <main class="container-fluid">
     <div class="row">
-      <div class="col-12 center-stage img-text clear no-select d-flex flex-column">
+      <section class="col-12 center-stage  clear no-select d-flex flex-column">
+        <!-- Clock -->
         <div id="clock"></div>
-        <div id="date" class="fs-5"></div>
-        <!-- <button onclick="app.namesController.test()">add</button> -->
-      </div>
+        <!-- Date -->
+        <h5 id="date"></h5>
+      </section>
     </div>
   </main>
 
-
+  <!-- Background Button  |  Quote  |  Todo Button -->
   <footer class="container-fluid">
     <div class="row">
-      <!-- img info -->
-      <div id="img-info" class="col-2 text-center fixed-bottom">
-        <h5 class="btn btn-outline mb-0 pb-0" onclick="app.imagesController.change()"> <i
-            class="mdi mdi-image fs-1 img-text-dark" title="Change Picture"></i>
-        </h5>
-      </div>
-      <!-- quote -->
-      <div id="quote" class="col-8 offset-2 text-center img-text no-select fixed-bottom">
-        <!-- <h5>Where there is a will, there is a way.</h5>
-        <p class="on-hover">Author here</p> -->
-      </div>
-      <!-- todo list -->
-      <div class="col-2 offset-10 text-center fixed-bottom mb-2">
-        <h5 class="mb-0 pb-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+
+      <!-- TextColor Button  |  Background Button -->
+      <section id="img-info" class="col-2 d-flex align-items-center justify-content-around fixed-bottom">
+
+        <!-- TextColor -->
+        <div id="text-toggle" class="selectable scale-up"></div>
+
+        <!-- Background -->
+        <div class="scale-up">
+          <i class="mdi mdi-image fs-1 img-text selectable scale-up" onclick="app.imagesController.changeImage()"
+            title="Change Background"></i>
+        </div>
+
+      </section>
+
+      <!-- Quote -->
+      <section id="quote" class="col-8 offset-2 text-center no-select fixed-bottom"></section>
+
+      <!-- Todo Button -->
+      <section class="col-2 offset-10 text-center fixed-bottom mb-2">
+        <h5 class="mb-0 pb-0 scale-up" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight">
-          <i class="mdi mdi-notebook img-text-dark fs-1 selectable" title="Open List"></i>
+          <i class="mdi mdi-notebook fs-1 selectable img-text" title="Open List"></i>
         </h5>
-      </div>
+      </section>
+
     </div>
 
   </footer>
 
-
   <!-- Todo offcanvas  -->
   <div class="offcanvas offcanvas-end todo-offcanvas rounded elevation-3" tabindex="-1" id="offcanvasRight"
     aria-labelledby="offcanvasRightLabel">
-    <div id="form">
-      <!-- <form class="input-todo" onsubmit="app.todosController.addTodo()">
-        <span>
-          <input class="clear ms-4 border-0 border-bottom border-2 border-dark" type="text" placeholder="Add Todo">
-          <button type="submit" class="selectable">
-            <i class="mdi mdi-pen ms-4 selectable" title="Add Todo"></i>
-          </button>
-        </span>
-      </form> -->
-    </div>
-    <h5 class="text-center mt-1 hand fs-2"><span id="count" class=" hand fs-2"></span>/<span id="total"
+
+    <!-- Todo Form -->
+    <section class="clear border-none" id="form"></section>
+
+    <!-- Todo Count -->
+    <section class="text-center mt-1 hand fs-2"><span id="count" class=" hand fs-2"></span>/<span id="total"
         class=" hand fs-2"></span>
-    </h5>
-    <ul id="todo-list" class="list-unstyled hide-scroll">
-      <!-- <li class="ms-4 d-flex justify-content-between">
-        <input type="checkbox">
-        <span class=" ms-2 border-bottom border-1 border-dark">This is a todo</span>
-        <i class="mdi mdi-delete-forever text-danger selectable me-4" title="Delete Todo"></i>
-      </li> -->
-    </ul>
+    </section>
+
+    <!-- Todo List -->
+    <section>
+      <ul id="todo-list" class="list-unstyled hide-scroll"></ul>
+    </section>
+
   </div>
 
-
   <!-- Links offcanvas -->
-  <div class="offcanvas offcanvas-start links-offcanvas img-text border-0 clear" tabindex="-1" id="offcanvasLinks"
+  <section class="offcanvas offcanvas-start links-offcanvas  border-0 clear" tabindex="-1" id="offcanvasLinks"
     aria-labelledby="offcanvasLinksLabel">
-    <ul class="list-unstyled">
+    <ul class="list-unstyled img-text">
 
       <a href="https://classroom.codeworksacademy.com/?code=kvadIKQJrc38sWRj&state=VG9hTHQ1SjNvQ1hldVpucFVRdEY0ck9STjVnNXJrUkJUUmFpTFpuQjdZUQ%3D%3D#/auth/cohorts/61538adfe1e93a00168aa490/outlines/1"
-        class=" ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
+        class=" ms-3 selectable no-select py-1 fs-3 d-flex align-items-center ">
         <img class="codeworks" src="https://bcw.blob.core.windows.net/public/img/9977764104160066" alt="">
-        <span class="fs-6 ms-2"> CodeWorks</span>
+        <span class="fs-6 ms-2 img-text"> CodeWorks</span>
       </a>
       <a href="https://github.com/"
         class="mdi mdi-github ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> GitHub</span>
+        <span class="fs-6 ms-2 img-text"> GitHub</span>
       </a>
       <a href="https://www.linkedin.com/"
         class="mdi mdi-linkedin ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> LinkedIn</span>
+        <span class="fs-6 ms-2 img-text"> LinkedIn</span>
       </a>
       <a href="https://mail.google.com/"
         class="mdi mdi-gmail ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> Gmail</span>
+        <span class="fs-6 ms-2 img-text"> Gmail</span>
       </a>
       <a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/"
         class="mdi mdi-bootstrap ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> Bootstrap Docs</span>
+        <span class="fs-6 ms-2 img-text"> Bootstrap Docs</span>
       </a>
       <a href="https://pictogrammers.github.io/@mdi/font/6.5.95/"
         class="mdi mdi-vector-square ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> MDI Icons</span>
+        <span class="fs-6 ms-2 img-text"> MDI Icons</span>
       </a>
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
         class="mdi mdi-language-javascript ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> JS Docs</span>
+        <span class="fs-6 ms-2 img-text"> JS Docs</span>
       </a>
       <a href="https://nodejs.org/en/docs/"
         class="mdi mdi-nodejs ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> NodeJs Docs</span>
+        <span class="fs-6 ms-2 img-text"> NodeJs Docs</span>
       </a>
       <a href="https://vuejs.org/guide/introduction.html"
         class="mdi mdi-vuejs ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> VueJs Docs</span>
+        <span class="fs-6 ms-2 img-text"> VueJs Docs</span>
       </a>
       <a href="https://fonts.google.com/"
         class="mdi mdi-google-downasaur ms-3 selectable no-select py-1 fs-3 d-flex align-items-center img-text">
-        <span class="fs-6 ms-2"> Google Fonts</span>
+        <span class="fs-6 ms-2 img-text"> Google Fonts</span>
       </a>
-
-
     </ul>
-  </div>
 
+  </section>
 
   <!-- Scripts -->
   <section>
@@ -175,6 +171,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
       integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
+
   </section>
 
 </body>

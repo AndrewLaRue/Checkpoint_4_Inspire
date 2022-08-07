@@ -30,7 +30,7 @@
 
 Stretch Goals
 
-[--]   Allow the user to set their name and have it save to localStorage
+[-X-]   Allow the user to set their name and have it save to localStorage
 
 [-X-]   Change the message from Good Morning to Good Afternoon, Evening as appropriate
 
@@ -40,7 +40,7 @@ Stretch Goals
 
 [-X/X-]   Add a button to cycle to next quote/picture
 
-[--]   Add a settings so user can change to a new 'theme' (font, background colors, etc.)
+[-X-]   Add a settings so user can change to a new 'theme' (font, background colors, etc.)
 
 [-X-]   Clicking the weather should let the user toggle between Celsius, Fahrenheit, and Kelvin
 

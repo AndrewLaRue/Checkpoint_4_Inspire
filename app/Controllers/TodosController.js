@@ -1,10 +1,23 @@
 import { ProxyState } from "../AppState.js";
 import { todosService } from "../Services/TodosService.js";
 import { Pop } from "../Utils/Pop.js";
-import { Todo } from "../Models/Todo.js"
 import { getTodoForm } from "../Components/TodoForm.js";
 
 
+function _draw() {
+  let template = ''
+  let todos = ProxyState.todos
+
+  todos.forEach(t => template += t.Template)
+
+  // @ts-ignore
+  document.getElementById('todo-list').innerHTML = template
+  // @ts-ignore
+  document.getElementById('form').innerHTML = getTodoForm()
+}
+
+
+// Counter \\
 
 function _todoTotal() {
   let total = ProxyState.todos.length
@@ -20,29 +33,17 @@ function _todoCount() {
 }
 
 
-
-function _draw() {
-  let template = ''
-  let todos = ProxyState.todos
-
-  todos.forEach(t => template += t.Template)
-
-  // @ts-ignore
-  document.getElementById('todo-list').innerHTML = template
-
-  // @ts-ignore
-  document.getElementById('form').innerHTML = getTodoForm()
-}
-
 export class TodosController {
 
   constructor() {
+    ProxyState.on('name', _draw)
     ProxyState.on('todos', _draw)
     ProxyState.on('todos', _todoTotal)
     ProxyState.on('todos', _todoCount)
     this.getTodos()
   }
 
+  // GET \\
   async getTodos() {
     try {
       await todosService.getTodos()
@@ -52,6 +53,7 @@ export class TodosController {
     }
   }
 
+// POST \\
   async addTodo() {
     try {
       // @ts-ignore
@@ -67,12 +69,22 @@ export class TodosController {
       // @ts-ignore
       form.reset()
     } catch (error) {
-      console.error('[addtodo]', error);
+      console.error('[addTodo]', error);
       Pop.error(error)
     }
-    
   }
 
+    // PUT \\
+  async toggle(id) {
+    try {
+      await todosService.toggle(id)
+    } catch (error) {
+      console.error('[toggle]', error);
+      Pop.error(error)
+    }
+  }
+
+// DELETE \\
   async deleteTodo(id) {
     try {
       if (await Pop.confirm()) { 
@@ -84,13 +96,7 @@ export class TodosController {
     }
   }
 
-  async toggle(id) {
-    try {
-      await todosService.toggle(id)
-    } catch (error) {
-      console.error('[toggle]', error);
-      Pop.error(error)
-    }
-  }
 
 }
+
+
