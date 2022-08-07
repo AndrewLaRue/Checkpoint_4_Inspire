@@ -1,4 +1,6 @@
 
+<!-- Requirements -->
+
 [-X-]   Quote: Quote always displayed and Author reveals on hover
 
 [-X-]   Image: The API must be used to get a random image on reload.
@@ -28,7 +30,8 @@
 [-X-]   All data for Weather, Quotes, Todos, and Images are retrieved through the BCW Sandbox API
 
 
-Stretch Goals
+
+<!-- Stretch Goals -->
 
 [-X-]   Allow the user to set their name and have it save to localStorage
 
