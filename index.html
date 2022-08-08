@@ -55,7 +55,7 @@
         <!-- Clock -->
         <div id="clock"></div>
         <!-- Date -->
-        <h5 id="date"></h5>
+        <h5 id="date" class="mt-1"></h5>
       </section>
     </div>
   </main>
@@ -72,7 +72,7 @@
 
         <!-- Background -->
         <div class="scale-up">
-          <i class="mdi mdi-image fs-1 img-text selectable scale-up" onclick="app.imagesController.changeImage()"
+          <i class="mdi mdi-image fs-5 img-text selectable scale-up" onclick="app.imagesController.changeImage()"
             title="Change Background"></i>
         </div>
 
@@ -82,7 +82,7 @@
       <section id="quote" class="col-8 offset-2 text-center no-select fixed-bottom"></section>
 
       <!-- Todo Button -->
-      <section class="col-1 offset-10 fixed-bottom text-center mb-2">
+      <section class="col-1 offset-11 fixed-bottom text-center mb-2">
         <h5 class="mb-0 pb-0 scale-up" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight">
           <i class="mdi mdi-notebook fs-1 selectable img-text" title="Open List"></i>
@@ -94,7 +94,7 @@
   </footer>
 
   <!-- Todo offcanvas  -->
-  <div class="offcanvas offcanvas-end todo-offcanvas rounded elevation-3" tabindex="-1" id="offcanvasRight"
+  <div class="offcanvas offcanvas-end todo-offcanvas rounded elevation-3 hide-scroll" tabindex="-1" id="offcanvasRight"
     aria-labelledby="offcanvasRightLabel">
 
     <!-- Todo Form -->

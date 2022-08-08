@@ -3,7 +3,7 @@ import { ProxyState } from "../AppState.js";
 let toggle = false
 
 function _drawAll() {
-  console.log('drawall');
+  // console.log('drawAll');
   _drawDay()
   _drawGreeting()
   _drawClock()
@@ -11,10 +11,11 @@ function _drawAll() {
 
 function _drawDay() {
   let time = new Date()
-  let day = time.toLocaleDateString('en-us', { timeZone: 'Europe/Helsinki' })
+  let alt = time.toDateString()
+  let day = time.toLocaleDateString()
     // @ts-ignore
      document.getElementById('date').innerHTML = `
-  <p class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'}">${day}</p>
+  <p title="${alt}" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${day}</p>
   `
 }
 
@@ -57,7 +58,7 @@ function _ClockUs() {
   }
 
   // @ts-ignore
-  document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'}">${h + ":" + m}</span>`
+  document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${h + ":" + m}</span>`
 }
 
 function _ClockEm() {
@@ -73,12 +74,13 @@ function _ClockEm() {
   if (m == 0) { m = '00' }
 
     // @ts-ignore
-    document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-dark'}">${ h + '' + m}</span>`
+    document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${ h + '' + m}</span>`
 }
 
 export class TimesController{
   constructor() {
     ProxyState.on('name', _drawGreeting)
+    ProxyState.on('name', _drawAll)
     setInterval(_drawClock, 10000)
 
     _drawAll()
