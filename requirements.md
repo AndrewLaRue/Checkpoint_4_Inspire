@@ -11,7 +11,7 @@
 
 [-X-]   Todo: Todo's list includes an up to date count of all tasks compared to uncompleted tasks (refresh not required)
 
-[-X-]   The image must be large with at least one an element positioned over top, without tiling or warping
+[-X-]   The image must be large with at least one element positioned over top, without tiling or warping
 
 [-X-]   When adding a Todo the page does not reload
 
@@ -37,7 +37,7 @@
 
 [-X-]   Change the message from Good Morning to Good Afternoon, Evening as appropriate
 
-[--]   Allow the user to toggle the clock from, 12hr to 24hr
+[-X-]   Allow the user to toggle the clock from, 12hr to 24hr
 
 [-X-]   Include an Icon to show what the weather is sunny/cloudy/rainy hint look at the weather data
 
