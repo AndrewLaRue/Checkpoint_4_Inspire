@@ -10,8 +10,10 @@ export function getNameForm(name = new Name({})) {
       <form onsubmit="app.namesController.addName()">
         
         <button class="btn border-0">
-        <i class="mdi mdi-gate-or ${!ProxyState.name.text ? 'img-text' : 'img-text-times'} fs-1 selectable" title="Submit"></i>
+        
         </button>
         </form>
   `
+
+  // <i class="mdi mdi-gate-or ${!ProxyState.name.text ? 'img-text' : 'img-text-times'} fs-1 selectable" title="Submit"></i>
 }
