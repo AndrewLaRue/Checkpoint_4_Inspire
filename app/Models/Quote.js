@@ -4,8 +4,8 @@ import { ProxyState } from "../AppState.js"
 export class Quote{
 
   constructor(data) {
-    this.description = data.content
-    this.author = data.author
+    this.description = data.content || ''
+    this.author = data.author || ''
     this.cycle = 0
   }
 
