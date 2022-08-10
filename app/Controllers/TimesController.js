@@ -15,7 +15,7 @@ function _drawDay() {
   let day = time.toLocaleDateString()
     // @ts-ignore
      document.getElementById('date').innerHTML = `
-  <p title="${alt}" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${day}</p>
+  <p title="${alt}" class="img-text">${day}</p>
   `
 }
 
@@ -58,7 +58,7 @@ function _ClockUs() {
   }
 
   // @ts-ignore
-  document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${h + ":" + m}</span>`
+  document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="img-text">${h + ":" + m}</span>`
 }
 
 function _ClockEm() {
@@ -74,7 +74,7 @@ function _ClockEm() {
   if (m == 0) { m = '00' }
 
     // @ts-ignore
-    document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'}">${ h + '' + m}</span>`
+    document.getElementById('clock').innerHTML = `<span onclick="app.timesController.changeClock()" class="img-text">${ h + '' + m}</span>`
 }
 
 export class TimesController{
