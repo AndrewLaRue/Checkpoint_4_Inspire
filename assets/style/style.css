@@ -9,6 +9,12 @@
   font-family: 'Black Ops One', cursive;
 }
 
+.img-text-times {
+  color: #d2d0d0;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
 
 /* * {
 

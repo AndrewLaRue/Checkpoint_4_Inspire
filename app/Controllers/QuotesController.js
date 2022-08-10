@@ -42,4 +42,37 @@ export class QuotesController {
   async change() {
   await this.getQuote()
   }
+
+  // cycleQuotes() {
+  //   try {
+  //     let cycle = ProxyState.quote.cycle
+  //     if (cycle = 1) {
+  //       cycle--
+  //       console.log(cycle);
+  //       intervalID = setInterval(this.getQuote, 1000)
+  //       ProxyState.quote = ProxyState.quote
+  //       // @ts-ignore
+  //       // document.getElementById('cycle').innerHTML = ProxyState.quote.CycleDown
+  //     }
+  //   } catch (error) {
+  //     console.error('[startCycle]', error);
+  //     Pop.error(error)
+  //   }
+  // }
+
+  // async stopCycle() {
+  //   try {
+  //     let cycle = ProxyState.quote.cycle
+  //     if (cycle = 0) {
+  //       cycle++
+  //       clearInterval(intervalID)
+  //       ProxyState.quote = ProxyState.quote
+  //               // @ts-ignore
+  //       // document.getElementById('cycle').innerHTML = ProxyState.quote.CycleUp
+  //     }
+  //   } catch (error) {
+  //     console.error('[stopCycle]', error);
+  //     Pop.error(error)
+  //   }
+  // }
 }

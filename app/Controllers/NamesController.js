@@ -27,6 +27,7 @@ function _drawName() {
 
 
 
+
 export class NamesController{
   constructor() {
   ProxyState.on('name', _drawOption)
@@ -34,6 +35,7 @@ export class NamesController{
     
   loadState()
   _drawOption()
+
   }
   
   addName() {
