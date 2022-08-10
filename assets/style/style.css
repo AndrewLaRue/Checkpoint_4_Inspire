@@ -96,9 +96,7 @@ a {
 }
 
 .todo-offcanvas {
-  background-image: url(../img/note.png);
-  /* background-color: darkgrey; */
-
+  background-image: url(/assets/img/note.png);
   background-position: center;
   background-size: inherit;
   height: 65vh;
