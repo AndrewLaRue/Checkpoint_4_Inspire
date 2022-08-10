@@ -25,10 +25,6 @@ function _drawName() {
   document.getElementById('greeting-name').innerHTML = name
 }
 
-function _drawTextToggle() {
-  // @ts-ignore
-  document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
-}
 
 
 export class NamesController{
@@ -38,7 +34,6 @@ export class NamesController{
     
   loadState()
   _drawOption()
-  _drawTextToggle()
   }
   
   addName() {
@@ -66,13 +61,6 @@ export class NamesController{
     _drawForm()
   }
 
-  toggleText() {
-      try {
-        namesService.toggleText()
-      } catch (error) {
-        console.error('[changeText]', error);
-        Pop.error(error)
-      }
-  }
+
 
 }

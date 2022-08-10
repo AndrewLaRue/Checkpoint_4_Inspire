@@ -9,15 +9,6 @@ class NamesService {
     ProxyState.name = new Name(newName)
   }
   
-  toggleText() {
-    ProxyState.name.text = !ProxyState.name.text
-    // console.log(ProxyState.name.text);
-
-    // @ts-ignore
-    document.getElementById('text-toggle').innerHTML = ProxyState.name.TextTemplate
-
-  }
-
 }
 
 

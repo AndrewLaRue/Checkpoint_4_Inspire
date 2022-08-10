@@ -4,7 +4,6 @@ import { ProxyState } from "../AppState.js"
 export class Name{
   constructor(data) {
     this.name = data.name || ''
-    this.text = false
   }
 
 
@@ -19,12 +18,7 @@ export class Name{
 }
     
   
-    get TextTemplate(){
-      return /*html*/ `
-      <i class="${!ProxyState.name.text ? 'img-text' : 'img-text-times'} mdi mdi-alpha-t-circle fs-5" onclick="app.namesController.toggleText(${this.text})" title="Change Text">
-      </i>
-      `
-    }
+
 
 
 
