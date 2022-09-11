@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js";
 import { quotesService } from "../Services/QuotesService.js";
 import { Pop } from "../Utils/Pop.js";
 
-let intervalID;
+// let intervalID;
 
 function _draw() {
   // @ts-ignore

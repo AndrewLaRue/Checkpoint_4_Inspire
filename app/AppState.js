@@ -22,7 +22,7 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Name').Name} */
   // @ts-ignore
-  name = null
+  name = ''
 }
 
 export const ProxyState = new Proxy(new AppState(), {
